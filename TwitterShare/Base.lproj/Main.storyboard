@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,19 +20,114 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iga-q8-xyF">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-1m-FUr">
+                                <rect key="frame" x="-12" y="44" width="424" height="556"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7p-p5-jYL">
+                                        <rect key="frame" x="20" y="20" width="384" height="141"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="1De-0I-884">
+                                                <variation key="widthClass=compact" constant="170"/>
+                                            </constraint>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  1</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="1De-0I-884"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="1De-0I-884"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7qo-D8-P1U" userLabel="Facebook Text View">
+                                        <rect key="frame" x="20" y="230" width="384" height="101"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="8Uc-A2-SJY">
+                                                <variation key="widthClass=compact" constant="170"/>
+                                            </constraint>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 2</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8Uc-A2-SJY"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="180" width="384" height="170"/>
+                                            <mask key="constraints">
+                                                <include reference="8Uc-A2-SJY"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-N9-4jG" userLabel="More Text View">
+                                        <rect key="frame" x="20" y="435" width="384" height="101"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="5Tg-mX-RXv">
+                                                <variation key="widthClass=compact" constant="170"/>
+                                            </constraint>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 3</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5Tg-mX-RXv"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="360" width="384" height="146"/>
+                                            <mask key="constraints">
+                                                <include reference="5Tg-mX-RXv"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="A1v-N9-4jG" firstAttribute="top" secondItem="7qo-D8-P1U" secondAttribute="bottom" constant="20" id="d7x-8O-LKA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="d7x-8O-LKA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" axis="vertical">
+                                    <mask key="constraints">
+                                        <exclude reference="d7x-8O-LKA"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rf-Ah-y0a">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qW6-aJ-PYv"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="action" id="ywB-dt-UX6">
+                                    <barButtonItem systemItem="action" id="ywB-dt-UX6" userLabel="Twitter">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="showShareAction:" destination="BYZ-38-t0r" id="eSQ-0N-99K"/>
                                         </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="hK7-L1-O3D" userLabel="Facebook">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="7H6-Q8-1sF" userLabel="More">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="K9f-U7-ect" userLabel="Nothing">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,39 +142,28 @@
                                     </mask>
                                 </variation>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7p-p5-jYL">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h7p-p5-jYL" secondAttribute="bottom" id="7DS-2T-8sY">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
-                            <constraint firstItem="h7p-p5-jYL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HsF-tw-oZV">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Kx-1m-FUr" secondAttribute="bottom" constant="20" id="8Jm-PJ-DHm"/>
                             <constraint firstItem="3rf-Ah-y0a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NJi-rZ-huf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Kx-1m-FUr" secondAttribute="bottom" constant="20" id="NSK-df-ujY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Iga-q8-xyF" secondAttribute="bottom" id="RYt-Lk-oa7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Kx-1m-FUr" secondAttribute="trailing" constant="-12" id="Tv7-Ml-53a"/>
                             <constraint firstItem="Iga-q8-xyF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VdC-tS-vnS"/>
                             <constraint firstItem="3rf-Ah-y0a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ve9-xX-Cou"/>
-                            <constraint firstAttribute="trailing" secondItem="h7p-p5-jYL" secondAttribute="trailing" id="XrO-6z-y2C">
-                                <variation key="widthClass=compact" constant="8"/>
+                            <constraint firstItem="4Kx-1m-FUr" firstAttribute="top" secondItem="3rf-Ah-y0a" secondAttribute="bottom" id="Y98-F6-dAy">
+                                <variation key="widthClass=compact" constant="10"/>
                             </constraint>
+                            <constraint firstItem="4Kx-1m-FUr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="h3H-zl-5Bd"/>
                             <constraint firstItem="Iga-q8-xyF" firstAttribute="top" secondItem="3rf-Ah-y0a" secondAttribute="bottom" id="hTi-Vl-aBu"/>
                             <constraint firstAttribute="trailing" secondItem="Iga-q8-xyF" secondAttribute="trailing" id="lho-gg-dGB"/>
-                            <constraint firstItem="h7p-p5-jYL" firstAttribute="top" secondItem="3rf-Ah-y0a" secondAttribute="bottom" id="ojo-qm-cDd"/>
                             <constraint firstAttribute="trailing" secondItem="3rf-Ah-y0a" secondAttribute="trailing" id="syN-6o-hpZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Iga-q8-xyF"/>
                                 <exclude reference="3rf-Ah-y0a"/>
-                                <exclude reference="h7p-p5-jYL"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="NJi-rZ-huf"/>
@@ -87,10 +172,11 @@
                                 <exclude reference="VdC-tS-vnS"/>
                                 <exclude reference="hTi-Vl-aBu"/>
                                 <exclude reference="lho-gg-dGB"/>
-                                <exclude reference="HsF-tw-oZV"/>
-                                <exclude reference="XrO-6z-y2C"/>
-                                <exclude reference="ojo-qm-cDd"/>
-                                <exclude reference="7DS-2T-8sY"/>
+                                <exclude reference="Tv7-Ml-53a"/>
+                                <exclude reference="Y98-F6-dAy"/>
+                                <exclude reference="h3H-zl-5Bd"/>
+                                <exclude reference="8Jm-PJ-DHm"/>
+                                <exclude reference="NSK-df-ujY"/>
                                 <exclude reference="RYt-Lk-oa7"/>
                             </mask>
                         </variation>
@@ -98,7 +184,6 @@
                             <mask key="subviews">
                                 <include reference="Iga-q8-xyF"/>
                                 <include reference="3rf-Ah-y0a"/>
-                                <include reference="h7p-p5-jYL"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="NJi-rZ-huf"/>
@@ -107,15 +192,18 @@
                                 <include reference="VdC-tS-vnS"/>
                                 <include reference="hTi-Vl-aBu"/>
                                 <include reference="lho-gg-dGB"/>
-                                <include reference="HsF-tw-oZV"/>
-                                <include reference="XrO-6z-y2C"/>
-                                <include reference="ojo-qm-cDd"/>
-                                <include reference="7DS-2T-8sY"/>
+                                <include reference="Tv7-Ml-53a"/>
+                                <include reference="Y98-F6-dAy"/>
+                                <include reference="h3H-zl-5Bd"/>
+                                <include reference="8Jm-PJ-DHm"/>
+                                <exclude reference="NSK-df-ujY"/>
                                 <include reference="RYt-Lk-oa7"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="facebookTextFld" destination="7qo-D8-P1U" id="ezW-OM-suh"/>
+                        <outlet property="moreTextFld" destination="A1v-N9-4jG" id="USx-CP-XOO"/>
                         <outlet property="tweetTextFld" destination="h7p-p5-jYL" id="2ve-F2-6B4"/>
                     </connections>
                 </viewController>

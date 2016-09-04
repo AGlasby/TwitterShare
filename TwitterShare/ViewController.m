@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextFld;
+@property (weak, nonatomic) IBOutlet UITextView *facebookTextFld;
+@property (weak, nonatomic) IBOutlet UITextView *moreTextFld;
 
 - (void) configureTweetTextView;
 - (void) showAlertMessage:(NSString *) myMessage;
@@ -23,6 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureTweetTextView];
+    [self configureFacebookTextView];
+    [self configureMoreTextView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +93,22 @@
     self.tweetTextFld.layer.cornerRadius = 10;
     self.tweetTextFld.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
     self.tweetTextFld.layer.borderWidth = 2.0;
+
+}
+
+- (void) configureFacebookTextView {
+    self.facebookTextFld.layer.backgroundColor = [UIColor colorWithRed:0.9 green:1.0 blue:1.0 alpha:1.0].CGColor;
+    self.facebookTextFld.layer.cornerRadius = 10;
+    self.facebookTextFld.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
+    self.facebookTextFld.layer.borderWidth = 2.0;
+
+}
+
+- (void) configureMoreTextView {
+    self.moreTextFld.layer.backgroundColor = [UIColor colorWithRed:1.0 green:0.9 blue:1.0 alpha:1.0].CGColor;
+    self.moreTextFld.layer.cornerRadius = 10;
+    self.moreTextFld.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
+    self.moreTextFld.layer.borderWidth = 2.0;
 
 }
 
