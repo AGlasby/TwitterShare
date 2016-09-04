@@ -32,7 +32,7 @@
 
 -(void) showAlertMessage:(NSString *) myMessage{
     UIAlertController *alertController;
-    alertController = [UIAlertController alertControllerWithTitle:@"TwitterShare" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
+    alertController = [UIAlertController alertControllerWithTitle:@"ShareIT" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated: YES completion:nil];
 
@@ -43,28 +43,45 @@
         [self.tweetTextFld resignFirstResponder];
     }
 
-    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"Test title" message:@"alert test message" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"Share your thoughts" message:@"Choose the social media option to use" preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+                SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                if([self.tweetTextFld.text length] < 140) {
+                    [twitterVC setInitialText:self.tweetTextFld.text];
+                } else {
+                    NSString *tweetCompliantText = [self.tweetTextFld.text substringToIndex:140];
+                    [twitterVC setInitialText:tweetCompliantText];
+                }
+                [self presentViewController:twitterVC animated:YES completion:nil];
+            } else {
+                [self showAlertMessage:@"Please log in to twitter before you try to tweet"];
+            }
+        }];
+
+    UIAlertAction *facebookAction = [UIAlertAction actionWithTitle:@"Post to Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+                SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                [facebookVC setInitialText:self.tweetTextFld.text];
+                [self presentViewController:facebookVC animated:YES completion:nil];
+            } else {
+                [self showAlertMessage:@"Please log in to facebook before you try to share"];
+            }
+    }];
+
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"More" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextFld.text] applicationActivities:nil];
+        [self presentViewController:moreVC animated:YES completion:nil];
+    }];
 
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+
+    [actionController addAction:tweetAction];
+    [actionController addAction:facebookAction];
+    [actionController addAction:moreAction];
     [actionController addAction:cancelAction];
-
-    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:
-                                  ^(UIAlertAction *action) {
-                                      if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-                                          SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                                          if([self.tweetTextFld.text length] < 140) {
-                                              [twitterVC setInitialText:self.tweetTextFld.text];
-                                          } else {
-                                              NSString *tweetCompliantText = [self.tweetTextFld.text substringToIndex:140];
-                                              [twitterVC setInitialText:tweetCompliantText];
-                                          }
-                                          [self presentViewController:twitterVC animated:YES completion:nil];
-
-                                      } else {
-                                          [self showAlertMessage:@"Please log in to twitter before you try to tweet"];
-                                      }
-                                  }];
-    [actionController addAction:tweetAction];    [self presentViewController:actionController animated:YES completion:nil];
+    [self presentViewController:actionController animated:YES completion:nil];
 }
 
 - (void) configureTweetTextView {
@@ -76,3 +93,11 @@
 }
 
 @end
+
+
+
+
+
+
+
+
