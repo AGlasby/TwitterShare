@@ -22,19 +22,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-1m-FUr">
-                                <rect key="frame" x="-12" y="44" width="424" height="556"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-1m-FUr">
+                                <rect key="frame" x="-12" y="44" width="1172" height="141"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7p-p5-jYL">
-                                        <rect key="frame" x="20" y="20" width="384" height="141"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7p-p5-jYL">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="141"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="1De-0I-884">
                                                 <variation key="widthClass=compact" constant="170"/>
                                             </constraint>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  1</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">This is a tweet sent from the social sharing app. It automatically truncates the text to 140 characters to ensure it meets Twitter constraints.</string>
+                                        <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -42,21 +43,23 @@
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <mask key="constraints">
                                                 <include reference="1De-0I-884"/>
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7qo-D8-P1U" userLabel="Facebook Text View">
-                                        <rect key="frame" x="20" y="230" width="384" height="101"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7qo-D8-P1U" userLabel="Facebook Text View">
+                                        <rect key="frame" x="394" y="0.0" width="384" height="141"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="8Uc-A2-SJY">
                                                 <variation key="widthClass=compact" constant="170"/>
                                             </constraint>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 2</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">This is a facebook post sent from the social sharing app. It does not automatically truncates the text to 140 characters as Facebook does not have such a constraint. So the post can go on and on and on...</string>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -64,30 +67,31 @@
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="180" width="384" height="170"/>
+                                            <rect key="frame" x="0.0" y="180" width="384" height="146"/>
                                             <mask key="constraints">
                                                 <include reference="8Uc-A2-SJY"/>
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-N9-4jG" userLabel="More Text View">
-                                        <rect key="frame" x="20" y="435" width="384" height="101"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-N9-4jG" userLabel="More Text View">
+                                        <rect key="frame" x="788" y="0.0" width="384" height="141"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="220" id="5Tg-mX-RXv">
                                                 <variation key="widthClass=compact" constant="170"/>
                                             </constraint>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 3</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">This text can be shared through the various options supported by IOS which include Twitter and Facebook but also through email and other apps that are installed on the iPhone.</string>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="5Tg-mX-RXv"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="360" width="384" height="146"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="336" width="384" height="170"/>
                                             <mask key="constraints">
                                                 <include reference="5Tg-mX-RXv"/>
                                             </mask>
@@ -117,17 +121,26 @@
                                     <barButtonItem systemItem="action" id="ywB-dt-UX6" userLabel="Twitter">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="showShareAction:" destination="BYZ-38-t0r" id="eSQ-0N-99K"/>
+                                            <action selector="showTweetAction:" destination="BYZ-38-t0r" id="Nrh-WR-19X"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="hK7-L1-O3D" userLabel="Facebook">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showFacebookAction:" destination="BYZ-38-t0r" id="T1O-h7-gWZ"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="7H6-Q8-1sF" userLabel="More">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showMoreAction:" destination="BYZ-38-t0r" id="2Tb-YB-Mkp"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="K9f-U7-ect" userLabel="Nothing">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showNothingAction:" destination="BYZ-38-t0r" id="FFI-o0-dbP"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
