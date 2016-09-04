@@ -39,7 +39,6 @@
     alertController = [UIAlertController alertControllerWithTitle:@"ShareIT" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated: YES completion:nil];
-
 }
 
 
